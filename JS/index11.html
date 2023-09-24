@@ -1,0 +1,97 @@
+<<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> JavaScript From validation</title>
+        <style>
+        body{
+            padding:15px 60px;
+        } 
+        
+        .formdesign{
+            font-size:20px;
+        }
+        .formdesign input{
+            width:50%;
+            padding:12px 20px;
+            border:1px solid blue;
+            margin:14px;
+            border-radius:4px;
+            font-size:15px;
+        }
+        .formerror{
+            color:red;
+        }
+
+        .but
+        {
+            border-radius:16px;
+            width:100px;
+            height:50px;
+            margin:22px:10px;
+            font-size:25px;
+
+        }
+
+        </style>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Welcome to  the best from on Internet</h1>
+        <from acrion =" /myaction.php" name="myForm" onsubmit="return validateForm()" method = "post">
+            <div class="formdesign" id="name">
+           Name: <input type="text" name="fname"><spam class="formerror">    </spam><br>
+            </div>
+
+            <div class="formdesign" id="email">
+                Email: <input type="email" name="femail"><spam class="formerror">   </spam><br>
+                 </div>
+
+                 <div class="formdesign" id="phone">
+                    Phone: <input type="phone" name="fphone"><spam class="formerror">   </spam><br>
+                     </div>
+
+                     <div class="formdesign" id="pass">
+                        Password: <input type="password" name="fpass"><spam class="formerror" >    </spam><br>
+                         </div>
+
+                         <div class="formdesign" id="cpass">
+                            Confirm Password: <input type="password" name="fcpass"><spam class="formerror">   </spam><br>
+                             </div>
+
+                             <input class="but" type="submit" value="submit">
+                
+                              
+        </from>
+        
+        
+    </body>
+
+    <script>
+
+        function seterror(id,error)
+        {
+            // set error inside tag of id
+
+            elment=document.getElementByID(id);
+            elment=document.getElementsByClassName('formerror')[0].innerHTML = error;
+
+        }
+
+        function  validateForm()
+        {
+            var returnval=true;
+            var name=document.forms['myForm']['fname'].value;
+             if(name.length<5)
+             {
+                seterror("name","length is to short");
+                returnval=false;
+             }
+        }
+    </script>
+</html>
+
